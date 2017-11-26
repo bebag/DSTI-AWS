@@ -120,6 +120,6 @@
         - ssh -i <pem file> ec2-user@<your_IP>
       - From PUB-JB, connect to PRIV-JB:
         - ssh jb-user@10.10.11.11 (password:changeme)
-      - From PUB-JB, ping a public IP:
+      - From PRIV-JB, ping a public IP:
         - ping www.amazon.com
 
