@@ -59,7 +59,7 @@
       - Click on "Subnet Associations" … Edit
         - select the JumpBox Private Subnet and click on "Save"
       - Click on "Routes" … Edit
-        - Add another route … Destination: 0.0.0.0/0 and select the nat gateway for the Target
+        - Add another route … Destination: 0.0.0.0/0 and select the NAT gateway for the Target
         - "Save"
 
 - [ ] **Create an EC2 instance with a public IP in the public subnet**
