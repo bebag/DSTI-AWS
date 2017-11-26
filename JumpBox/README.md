@@ -87,9 +87,7 @@
 
       - Services -> EC2 … Click on "Launch Instance"
         - select "Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type - ami-1a962263"
-
         - t2.micro (Free tier eligible)
-
         - Configure instance details:
           - Network: JumpBox VPC
           - Subnet: JumpBox Private Subnet
@@ -105,7 +103,6 @@
                    echo jb-user:changeme | chpasswd
 
         - Add Storage (keep the default)
-
         - Add Tags (Key: NAME and Value: PRIV-JB)
         - Configure Security Groups
           - Create a new Security Group
@@ -113,13 +110,9 @@
           - Modify the default rule to only allow ssh from your VPC: Source = 10.10.0.0/16
           - Add rule
             - All ICMP - IPv4 : source = 10.10.0.0/16
-
         - Review and Launch
-
         - Launch and select "Proceed without a key pair"
-
         - View Instances
-
 
 - [ ] **Test**
 
