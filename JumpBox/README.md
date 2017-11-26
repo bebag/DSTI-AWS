@@ -86,38 +86,28 @@
 - [ ] **Create an EC2 instance with a private IP in the public subnet**
 
       - Services -> EC2 … Click on "Launch Instance"
-
         - select "Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type - ami-1a962263"
 
         - t2.micro (Free tier eligible)
 
         - Configure instance details:
-
           - Network: JumpBox VPC
-
           - Subnet: JumpBox Private Subnet
-
           - Auto-assign Public IP: Disable
-
           - Network Interfaces: Primary IP: 10.10.11.11
-
           - Advanced Details … User data As text
 
-            ```
-            #!/bin/bash
-            printf "\nMatch Address 10.10.0.0/16" >> /etc/ssh/sshd_config
-            printf "\nPasswordAuthentication yes" >> /etc/ssh/sshd_config
-            /etc/init.d/sshd reload
-            useradd jb-user
-            echo jb-user:changeme | chpasswd
-            ```
+                   #!/bin/bash
+                   printf "\nMatch Address 10.10.0.0/16" >> /etc/ssh/sshd_config
+                   printf "\nPasswordAuthentication yes" >> /etc/ssh/sshd_config
+                   /etc/init.d/sshd reload
+                   useradd jb-user
+                   echo jb-user:changeme | chpasswd
 
         - Add Storage (keep the default)
 
         - Add Tags (Key: NAME and Value: PRIV-JB)
-
         - Configure Security Groups
-
           - Create a new Security Group
           - Security Group Name: SG-PRIV-JB
           - Modify the default rule to only allow ssh from your VPC: Source = 10.10.0.0/16
@@ -129,6 +119,7 @@
         - Launch and select "Proceed without a key pair"
 
         - View Instances
+
 
 - [ ] **Test**
 
